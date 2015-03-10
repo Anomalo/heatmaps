@@ -2,7 +2,7 @@ args<-commandArgs(TRUE)
 library(RColorBrewer)
 library(gplots)
 files = c('crossover.csv','fpkmnoduplicats.csv','postfed.csv')
-max = 10
+max = 15
 
 f = args
 print(f)
