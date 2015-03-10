@@ -2,12 +2,15 @@ args<-commandArgs(TRUE)
 library(RColorBrewer)
 library(gplots)
 files = c('crossover.csv','fpkmnoduplicats.csv','postfed.csv')
-max = 15
+max = 5
 
 f = args
 print(f)
-pname = paste(f,max,'png',sep='.')
+pname = paste(f,max,'noALtoDR3','png',sep='.')
 data <- read.table(f,check.names=FALSE,sep=",",header=TRUE,row.names=1)
+
+data$'ALtoDR(3)' <- NULL
+
 means = rowMeans(data)
 data = data[!means==0,]
 means = means[!means==0]
